@@ -1,60 +1,58 @@
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
+#include "sensor_msgs/msg/imu.hpp"
+#include "nav_msgs/msg/odometry.hpp"
+#include "geometry_msgs/msg/pose_with_covariance_stamped.hpp"
+
 #include <eigen3/Eigen/Dense>
-#include <sensor_msgs/Imu.h>
-#include <nav_msgs/Odometry.h>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <tf2/LinearMath/Quaternion.h>
+
 #include <message_filters/subscriber.h>
 #include <message_filters/time_synchronizer.h>
 
-class FilterNode
+using std::placeholders::_1;
+using std::placeholders::_2;
+
+class FilterNode : public rclcpp::Node
 {
 public:
-    FilterNode(ros::NodeHandle &nh)
+    FilterNode() : Node("filter_node")
     {
-        odom_sub_.subscribe(nh, "/odom", 10);
-        imu_sub_.subscribe(nh, "/imu", 10);
+        odom_sub_.subscribe(this, "/odom");
+        imu_sub_.subscribe(this, "/imu");
 
-        sync_.reset(new message_filters::TimeSynchronizer<nav_msgs::Odometry, sensor_msgs::Imu>(odom_sub_, imu_sub_, 10));
-        sync_->registerCallback(boost::bind(&FilterNode::sensorCallback, this, _1, _2));
+        sync_ = std::make_shared<message_filters::TimeSynchronizer<nav_msgs::msg::Odometry, sensor_msgs::msg::Imu>>(odom_sub_, imu_sub_, 10);
+        sync_->registerCallback(std::bind(&FilterNode::sensorCallback, this, _1, _2));
 
-        pub_ = nh.advertise<geometry_msgs::PoseWithCovarianceStamped>("/prediction", 10);
+        pub_ = this->create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("/prediction", 10);
+
+        RCLCPP_INFO(this->get_logger(), "FilterNode initialized");
     }
 
 private:
-    void sensorCallback(const nav_msgs::Odometry::ConstPtr &odom_msg, const sensor_msgs::Imu::ConstPtr &imu_msg)
+    void sensorCallback(const nav_msgs::msg::Odometry::ConstSharedPtr odom_msg,
+                        const sensor_msgs::msg::Imu::ConstSharedPtr imu_msg)
     {
-        ROS_INFO_STREAM("Received sensor data");
-        /*
-            Include your pipeline here:
-            - Convert the sensor data
-            - Predict the state
-            - Correct (Update) the state
-            - Publish the prediction (PoseWithCovarianceStamped)
-        */
+        RCLCPP_INFO(this->get_logger(), "Received synchronized sensor data");
+
+        // TODO: Implement filtering logic here
     }
 
-    /*
-        you can add your filter methods here
-    */
+    // ROS 2 interfaces
+    message_filters::Subscriber<nav_msgs::msg::Odometry> odom_sub_;
+    message_filters::Subscriber<sensor_msgs::msg::Imu> imu_sub_;
+    std::shared_ptr<message_filters::TimeSynchronizer<nav_msgs::msg::Odometry, sensor_msgs::msg::Imu>> sync_;
 
-    message_filters::Subscriber<nav_msgs::Odometry> odom_sub_;
-    message_filters::Subscriber<sensor_msgs::Imu> imu_sub_;
-    std::shared_ptr<message_filters::TimeSynchronizer<nav_msgs::Odometry, sensor_msgs::Imu>> sync_;
-    ros::Publisher pub_;
-    ros::Time last_time_;
+    rclcpp::Publisher<geometry_msgs::msg::PoseWithCovarianceStamped>::SharedPtr pub_;
 
-    // You can add your filter objects here
-    // example for A:
     Eigen::MatrixXd A_ = Eigen::MatrixXd::Identity(6, 1);
 };
-
+  
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "filter_node");
-    ros::NodeHandle nh("~");
-    FilterNode node(nh);
-    ros::spin();
-
+    rclcpp::init(argc, argv);
+    rclcpp::spin(std::make_shared<FilterNode>());
+    rclcpp::shutdown();
     return 0;
 }

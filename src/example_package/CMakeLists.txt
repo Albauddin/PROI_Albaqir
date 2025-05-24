@@ -12,12 +12,17 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(Eigen3 REQUIRED)
 
 include_directories(
   include
+  ${rclcpp_INCLUDE_DIRS}
+  ${tf2_INCLUDE_DIRS}
+  ${tf2_geometry_msgs_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIR}
 )
@@ -29,6 +34,8 @@ ament_target_dependencies(filter_node
   sensor_msgs
   std_msgs
   geometry_msgs
+  tf2
+  tf2_geometry_msgs
   nav_msgs
 )
 
@@ -42,4 +49,15 @@ install(TARGETS
 
 # Package
 ament_package()
+
+
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}/
+)
+
+install(DIRECTORY world
+  DESTINATION share/${PROJECT_NAME}/
+)
+
+
 
