@@ -1,0 +1,31 @@
+<launch>
+  <!-- Launch Gazebo with world -->
+  <include file="$(find gazebo_ros)/launch/gazebo.launch.xml">
+    <arg name="world" value="$(find example_package)/world/playground.world"/>
+    <arg name="gui" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="paused" value="false"/>
+  </include>
+
+  <!-- Load robot_description using xacro -->
+  <param
+    name="robot_description"
+    command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_burger_for_autorace.urdf.xacro"
+  />
+
+  <!-- Run robot_state_publisher with the robot description -->
+  <node pkg="robot_state_publisher" exec="robot_state_publisher" name="robot_state_publisher" output="screen">
+    <param name="use_sim_time" value="true"/>
+  </node>
+
+  <!-- Spawn robot in Gazebo -->
+  <node pkg="gazebo_ros" exec="spawn_entity.py" name="spawn_urdf" output="screen"
+        args="-entity turtlebot3_burger -topic robot_description -x 0 -y 0 -z 0 -Y 0"/>
+
+  <!-- Launch RViz2 -->
+  <node pkg="rviz2" exec="rviz2" name="rviz2" args="-d $(find example_package)/config/config.rviz" output="screen"/>
+
+  <!-- Teleop keyboard in xterm -->
+  <node pkg="turtlebot3_teleop" exec="teleop_keyboard" name="teleop_keyboard" launch-prefix="xterm -e" output="screen"/>
+</launch>
+
