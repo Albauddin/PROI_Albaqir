@@ -85,9 +85,18 @@
 
 11. **Expected results**
 
-   
+   The comparison between Kalman FIlter with the ground truth should look like this
+   ![kf_vs_odom (2)](https://github.com/user-attachments/assets/886ae70e-26eb-4599-a711-0187946cffa8)
+
+   The comparison between Extended Kalman FIlter(with simulated drift noises) with the ground truth should look like this
+   ![ekf_vs_odom_cov (7)](https://github.com/user-attachments/assets/a03ae07a-bb68-4452-b2e6-fd31724be1e8)
+
+   The comparison between Particle FIlter with the ground truth should look like this
+   ![pf_vs_odom_particles (7)](https://github.com/user-attachments/assets/3df0ec62-53cc-493a-9315-fafa0b09bf1f)
 
 
+
+# Video submission
 
 
 
