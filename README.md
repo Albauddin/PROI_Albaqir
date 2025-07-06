@@ -7,7 +7,11 @@
    Follow this documentation to prepare your Project with Nav2 and ROS2 slam_toolbox
      [https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map](https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map)
 
-2. **Launch your Gazebo world**
+2. **Run the docker container**
+
+   
+
+3. **Launch your Gazebo world**
 
    Source every terminal you newly open
    ```bash
@@ -20,7 +24,7 @@
    ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
    ```
 
-3. **Starts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
+4. **Starts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
 
    Adjust yourmap file path
    ```bash
