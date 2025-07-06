@@ -9,9 +9,14 @@
 
 2. **Run the docker container**
 
+   Make it executable and run the file
+   ```bash
+   chmod +x docker/run.sh
+   ./docker/run.sh
+   ```
    
 
-3. **Launch your Gazebo world**
+4. **Launch your Gazebo world**
 
    Source every terminal you newly open
    ```bash
@@ -24,7 +29,7 @@
    ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
    ```
 
-4. **Starts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
+5. **Starts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
 
    Adjust yourmap file path
    ```bash
@@ -33,7 +38,7 @@
    
 
    
-5. **launches the navigation system**
+6. **launches the navigation system**
 
    Launches a complete navigation system for TurtleBot3 in simulation, using your specific map and RViz setup
 
