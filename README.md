@@ -11,18 +11,32 @@
    -Source every terminal you newly open
    ```bash
    source /opt/ros/humble/setup.bash
-   source /workspace/data/install/setup.bash
+   source /<your workspace>/install/setup.bash
    ```
    
    -Launch the gazebo world 
-  ```bash
+   ```bash
    ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
    ```
 
-3. ****
-4. ****
-5. ****
-6. ****
+3. **tarts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
+
+   -adjust yourmap file path
+   ```bash
+   ros2 launch nav2_bringup localization_launch.py map:=/<your workspace>/src/my_cool_project/maps/my_map.yaml
+   ```
+   
+
+   
+5. **launches the navigation system**
+
+   -launches a complete navigation system for TurtleBot3 in simulation, using your specific map and RViz setup
+
+   ![image](https://github.com/user-attachments/assets/5f4ecd00-36e4-4c94-9d66-f3174686fffa)
+
+   this
+7. ****
+8. ****
 
 
 
