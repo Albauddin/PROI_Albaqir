@@ -4,7 +4,7 @@
 
 1. **Create environtment and workspace for this project**
 
-   -follow this documentation to prepare your Project with Nav2 and ROS2 slam_toolbox
+   Follow this documentation to prepare your Project with Nav2 and ROS2 slam_toolbox
      [https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map](https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map)
 
 2. **Launch your Gazebo world**
@@ -22,7 +22,7 @@
 
 3. **Starts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
 
-   adjust yourmap file path
+   Adjust yourmap file path
    ```bash
    ros2 launch nav2_bringup localization_launch.py map:=/<your workspace>/src/my_cool_project/maps/my_map.yaml
    ```
@@ -31,7 +31,7 @@
    
 5. **launches the navigation system**
 
-   launches a complete navigation system for TurtleBot3 in simulation, using your specific map and RViz setup
+   Launches a complete navigation system for TurtleBot3 in simulation, using your specific map and RViz setup
 
    ```bash
    ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=<your workspace>/src/my_cool_project/maps/my_map.yaml rviz_config:='/h<your workspace>/PROI/config/tb3_navigation2.rviz'
@@ -85,12 +85,22 @@
 
 11. **Expected results**
 
+   
 
 
 
 
 
+## **Troubleshoot**
 
+   When the steps are not working as wexpected:
+      - wait a little bit when you are sending command from one terminal to the other.
+      - reset the gazebo, RViz and ROS2
+         ```bash
+         pkill -f gazebo
+         pkill -f rviz
+         pkill -f ros2
+         ```
 
 
 
