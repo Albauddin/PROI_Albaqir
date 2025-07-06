@@ -97,23 +97,16 @@
 
 
 
-
-
-
-
-
-
-
 # Video submission
 
 ## Kalman Filter VS Ground Truth
-
-
 https://github.com/user-attachments/assets/c9689890-ff80-49c3-b96b-898f70e6106c
 
 
-
 ## Extended Kalman Filter VS Ground Truth
+https://github.com/user-attachments/assets/6653d4b8-f16c-4270-be9a-694c1ad3ed9c
+
+- Without correction
 
 
 ## Particle Filter VS Ground Truth
@@ -133,15 +126,8 @@ https://github.com/user-attachments/assets/c9689890-ff80-49c3-b96b-898f70e6106c
 
 
 
-#recording topics
-ros2 bag record /kf_pose /noisy_pose /odom
 
 #republish odometry so making jam effect
 python3 republish_odometry.py
 
 
-################## Killers ##################
-
-pkill -f gazebo
-pkill -f rviz
-pkill -f ros2
