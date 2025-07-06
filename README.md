@@ -8,20 +8,20 @@
 
 2. **Launch your Gazebo world**
 
-   -Source every terminal you newly open
+   Source every terminal you newly open
    ```bash
    source /opt/ros/humble/setup.bash
    source /<your workspace>/install/setup.bash
    ```
    
-   -Launch the gazebo world 
+   Launch the gazebo world 
    ```bash
    ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
    ```
 
 3. **tarts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
 
-   -adjust yourmap file path
+   adjust yourmap file path
    ```bash
    ros2 launch nav2_bringup localization_launch.py map:=/<your workspace>/src/my_cool_project/maps/my_map.yaml
    ```
@@ -30,13 +30,28 @@
    
 5. **launches the navigation system**
 
-   -launches a complete navigation system for TurtleBot3 in simulation, using your specific map and RViz setup
+   launches a complete navigation system for TurtleBot3 in simulation, using your specific map and RViz setup
 
+   ```bash
+   ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=<your workspace>/src/my_cool_project/maps/my_map.yaml rviz_config:='/h<your workspace>/PROI/config/tb3_navigation2.rviz'
+   ```
+
+   depends on your needs you can turn on vosualization of the filter and the ground truth "/odom"
    ![image](https://github.com/user-attachments/assets/5f4ecd00-36e4-4c94-9d66-f3174686fffa)
 
-   this
-7. ****
+7. **Start all the filter nodes**
+
+   ```bash
+   ros2 launch filters filters.launch.py
+   ```
+   
+    .start all the filter nodes you defined in your launch file, such as:
+      Kalman filter node 
+      Extended Kalman filter node
+      Particle filter node
+
 8. ****
+9. ****
 
 
 
