@@ -39,6 +39,8 @@
 
    depends on your needs you can turn on vosualization of the filter and the ground truth "/odom"
    ![image](https://github.com/user-attachments/assets/5f4ecd00-36e4-4c94-9d66-f3174686fffa)
+   <img src="https://github.com/user-attachments/assets/5f4ecd00-36e4-4c94-9d66-f3174686fffa" width="70%">
+
 
 7. **Start all the filter nodes**
 
