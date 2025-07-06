@@ -50,8 +50,31 @@
       - Extended Kalman filter node
       - Particle filter node
 
-8. ****
-9. ****
+   Starting position on the map for localization algorithms to tell where the robot really is
+    ```bash
+   ros2 run my_cool_project initial_pose_publisher
+   ```  
+
+9. **Plot the filters**
+
+   To Plot the Kalman Filter compared to ground truth
+   ```bash
+   python3 /<your workspace>/analysis/plot_kf_vs_odom.py
+   ```
+
+   To Plot the Extended Kalman Filter compared to ground truth
+   ```bash
+   python3 /<your workspace>/analysis/plot_ekf_vs_odom.py
+   ```
+
+   To Plot the Particle Filter compared to ground truth
+   ```bash
+   python3 /<your workspace>/analysis/plot_pf_vs_odom.py
+   ```
+   
+10. **Demo: Send Robot to Four Poses**
+
+11. ****
 
 
 
