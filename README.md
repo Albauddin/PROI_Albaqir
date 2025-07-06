@@ -96,11 +96,11 @@
    When the steps are not working as wexpected:
       - wait a little bit when you are sending command from one terminal to the other.
       - reset the gazebo, RViz and ROS2
-         ```bash
-         pkill -f gazebo
-         pkill -f rviz
-         pkill -f ros2
-         ```
+   ```bash
+   pkill -f gazebo
+   pkill -f rviz
+   pkill -f ros2
+   ```
 
 
 
