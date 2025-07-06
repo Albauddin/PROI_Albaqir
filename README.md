@@ -2,7 +2,8 @@
 
 ## **Step-by-Step Instructions**
 
-1. **create Environtment and Workspace for this project**
+1. **Create environtment and workspace for this project**
+
    -follow this documentation to prepare your Project with Nav2 and ROS2 slam_toolbox
      [https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map](https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map)
 
@@ -19,7 +20,7 @@
    ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
    ```
 
-3. **tarts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
+3. **Starts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
 
    adjust yourmap file path
    ```bash
@@ -71,10 +72,18 @@
    ```bash
    python3 /<your workspace>/analysis/plot_pf_vs_odom.py
    ```
-   
-10. **Demo: Send Robot to Four Poses**
 
-11. ****
+   press `Ctrl + c` to and the plotting and see the result, the result will be saved in `analysis` directory
+   
+10. **Demo: send robot to four poses**
+
+   To create identical comparison between all the Filters, run this script to navigate the robot to 4 poses
+   ```bash
+   ros2 run my_cool_project run_demo
+   ```
+
+
+11. **Expected results**
 
 
 
