@@ -7,8 +7,22 @@
      [https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map](https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map)
 
 2. **Launch your Gazebo world**
-  
-3. 
+
+   -Source every terminal you newly open
+   ```bash
+   source /opt/ros/humble/setup.bash
+   source /workspace/data/install/setup.bash
+   ```
+   
+   -Launch the gazebo world 
+  ```bash
+   ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+   ```
+
+3. ****
+4. ****
+5. ****
+6. ****
 
 
 
