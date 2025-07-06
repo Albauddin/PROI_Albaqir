@@ -45,10 +45,10 @@
    ros2 launch filters filters.launch.py
    ```
    
-    .start all the filter nodes you defined in your launch file, such as:
-      Kalman filter node 
-      Extended Kalman filter node
-      Particle filter node
+   Start all the filter nodes you defined in your launch file, such as:
+      - Kalman filter node 
+      - Extended Kalman filter node
+      - Particle filter node
 
 8. ****
 9. ****
