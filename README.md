@@ -39,7 +39,6 @@
 
    depends on your needs you can turn on vosualization of the filter and the ground truth "/odom"
    ![image](https://github.com/user-attachments/assets/5f4ecd00-36e4-4c94-9d66-f3174686fffa)
-   <img src="https://github.com/user-attachments/assets/5f4ecd00-36e4-4c94-9d66-f3174686fffa" width="70%">
 
 
 7. **Start all the filter nodes**
@@ -88,13 +87,16 @@
 11. **Expected results**
 
    The comparison between Kalman FIlter with the ground truth should look like this
-   ![kf_vs_odom (2)](https://github.com/user-attachments/assets/886ae70e-26eb-4599-a711-0187946cffa8)
+   <!--![kf_vs_odom (2)](https://github.com/user-attachments/assets/886ae70e-26eb-4599-a711-0187946cffa8)-->
+   <img src="https://github.com/user-attachments/assets/886ae70e-26eb-4599-a711-0187946cffa8" width="50%">
 
    The comparison between Extended Kalman FIlter(with simulated drift noises) with the ground truth should look like this
-   ![ekf_vs_odom_cov (7)](https://github.com/user-attachments/assets/a03ae07a-bb68-4452-b2e6-fd31724be1e8)
+   <!--![ekf_vs_odom_cov (7)](https://github.com/user-attachments/assets/a03ae07a-bb68-4452-b2e6-fd31724be1e8)-->
+   <img src="https://github.com/user-attachments/assets/a03ae07a-bb68-4452-b2e6-fd31724be1e8" width="50%">
 
    The comparison between Particle FIlter with the ground truth should look like this
-   ![pf_vs_odom_particles (7)](https://github.com/user-attachments/assets/3df0ec62-53cc-493a-9315-fafa0b09bf1f)
+   <!--![pf_vs_odom_particles (7)](https://github.com/user-attachments/assets/3df0ec62-53cc-493a-9315-fafa0b09bf1f)-->
+   <img src="https://github.com/user-attachments/assets/3df0ec62-53cc-493a-9315-fafa0b09bf1f" width="50%">
 
 
 
