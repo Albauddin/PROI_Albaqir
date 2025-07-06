@@ -110,13 +110,8 @@ https://github.com/user-attachments/assets/c9689890-ff80-49c3-b96b-898f70e6106c
 ## Extended Kalman Filter VS Ground Truth
 https://github.com/user-attachments/assets/6653d4b8-f16c-4270-be9a-694c1ad3ed9c
 
-- Without correction
-
-
-
+Without correction
 https://github.com/user-attachments/assets/f5deacaf-72b9-4001-b0a6-cd39ab1ff18e
-
-
 
 
 ## Particle Filter VS Ground Truth
