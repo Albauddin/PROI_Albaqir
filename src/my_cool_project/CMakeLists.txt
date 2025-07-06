@@ -20,9 +20,9 @@ find_package(launch_ros REQUIRED)
 # Add include directories if needed
 # include_directories(include)
 
-# Add executable(s)
-# add_executable(my_node src/my_node.cpp)
-# ament_target_dependencies(my_node rclcpp std_msgs sensor_msgs geometry_msgs nav_msgs)
+Add executable(s)
+add_executable(my_node src/my_node.cpp)
+ament_target_dependencies(my_node rclcpp std_msgs sensor_msgs geometry_msgs nav_msgs)
 
 # Install binaries
 # install(TARGETS
