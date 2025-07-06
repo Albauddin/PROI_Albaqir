@@ -135,8 +135,8 @@ https://github.com/user-attachments/assets/c2fd4ee0-acec-466b-a807-229e18731376
 ## **Troubleshoot**
 
    When the steps are not working as wexpected:
-      - wait a little bit when you are sending command from one terminal to the other.
-      - reset the gazebo, RViz and ROS2
+   - wait a little bit when you are sending command from one terminal to the other.
+   - reset the gazebo, RViz and ROS2
    ```bash
    pkill -f gazebo
    pkill -f rviz
