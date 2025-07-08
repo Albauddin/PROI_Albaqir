@@ -1,4 +1,6 @@
 from setuptools import setup
+import os
+from glob import glob
 
 package_name = 'my_cool_project'
 
@@ -12,13 +14,19 @@ setup(
 
         # Standard installation paths
         ('share/' + package_name, ['package.xml']),
-        ('share/' + package_name + '/launch', [
-            'launch/myfile.launch.py',
-            'launch/myfile2.launch.py'
-        ]),
-        ('share/' + package_name + '/maps', [
-            'maps/10by10_maze.world_1.xml'
-        ]),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'maps'), glob('maps/*')),    # If you have maps
+        (os.path.join('share', package_name, 'config'), glob('config/*')), # If you have config
+
+        # ('share/' + package_name + '/launch', [
+        #     'launch/myfile.launch.py',
+        #     'launch/myfile2.launch.py',
+        #     'launch/start.launch.py',
+        #     # ('share/my_cool_project/launch', glob('launch/*.launch.py'))
+        # ]),
+        # ('share/' + package_name + '/maps', [
+        #     'maps/10by10_maze.world_1.xml'
+        # ]),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
