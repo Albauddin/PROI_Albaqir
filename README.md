@@ -7,7 +7,7 @@
    Follow this documentation to prepare your Project with Nav2 and ROS2 slam_toolbox
      [https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map](https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map)
 
-2.**Run the docker container** (optional)
+2. **Run the docker container** (optional)
 
    Make it executable and run the file
    ```bash
