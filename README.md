@@ -41,7 +41,7 @@
    ./start.launch.sh
    ```
    
-6. **Launch your Gazebo world**
+5. **Launch your Gazebo world**
 
    Source every terminal you newly open
    ```bash
@@ -54,7 +54,7 @@
    ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
    ```
 
-7. **Starts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
+6. **Starts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
 
    Adjust yourmap file path
    ```bash
@@ -63,7 +63,7 @@
    
 
    
-8. **launches the navigation system**
+7. **launches the navigation system**
 
    Launches a complete navigation system for TurtleBot3 in simulation, using your specific map and RViz setup
 
@@ -76,7 +76,7 @@
    ![Screenshot from 2025-07-09 03-44-33](https://github.com/user-attachments/assets/a1c00ff5-3ed3-46ed-8d14-569a4b57b661)
 
 
-9. **Start all the filter nodes**
+8. **Start all the filter nodes**
 
    ```bash
    ros2 launch filters filters.launch.py
@@ -92,26 +92,26 @@
    ros2 run my_cool_project initial_pose_publisher
    ```  
 
-10. **Plot the filters**
+9. **Plot the filters**
 
-   To Plot the Kalman Filter compared to ground truth
-   ```bash
-   python3 /<your workspace>/analysis/plot_kf_vs_odom.py
-   ```
-
-   To Plot the Extended Kalman Filter compared to ground truth
-   ```bash
-   python3 /<your workspace>/analysis/plot_ekf_vs_odom.py
-   ```
-
-   To Plot the Particle Filter compared to ground truth
-   ```bash
-   python3 /<your workspace>/analysis/plot_pf_vs_odom.py
-   ```
+      To Plot the Kalman Filter compared to ground truth
+      ```bash
+      python3 /<your workspace>/analysis/plot_kf_vs_odom.py
+      ```
+   
+      To Plot the Extended Kalman Filter compared to ground truth
+      ```bash
+      python3 /<your workspace>/analysis/plot_ekf_vs_odom.py
+      ```
+   
+      To Plot the Particle Filter compared to ground truth
+      ```bash
+      python3 /<your workspace>/analysis/plot_pf_vs_odom.py
+      ```
 
    press `Ctrl + c` to and the plotting and see the result, the result will be saved in `analysis` directory
    
-11. **Demo: send robot to four poses**
+10. **Demo: send robot to four poses**
 
    To create identical comparison between all the Filters, run this script to navigate the robot to 4 poses
    ```bash
