@@ -7,20 +7,20 @@
    Follow this documentation to prepare your Project with Nav2 and ROS2 slam_toolbox
      [https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map](https://roboticsbackend.com/ros2-nav2-generate-a-map-with-slam_toolbox/#Next_steps_with_the_generated_map)
 
-2. **Run the docker container** (optional)
+2.**Run the docker container** (optional)
 
    Make it executable and run the file
    ```bash
    chmod +x docker/run.sh
    ./docker/run.sh
    ```
-   
-3.**Clone this Repository**
+3. **Clone this Repository**
    
    clone this repo by doing (SSH key)
    ```bash
    git clone git@github.com:Albauddin/PROI_Albaqir.git
    ```
+   
 
 4. **Launch start.launch.sh**
 
