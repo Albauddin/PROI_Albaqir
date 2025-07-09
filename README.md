@@ -15,7 +15,7 @@
    ./docker/run.sh
    ```
    
-   3.**Clone this Repository**
+3.**Clone this Repository**
    
    clone this repo by doing (SSH key)
    ```bash
