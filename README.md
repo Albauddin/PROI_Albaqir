@@ -25,6 +25,7 @@
 4. **Launch start.launch.sh**
 
    To start the simulation in Gazebo and visualization on th RViz
+
    build the repo in your workspace
    ```bash
    colcon build
@@ -163,11 +164,18 @@ https://github.com/user-attachments/assets/c2fd4ee0-acec-466b-a807-229e18731376
    - wait a little bit when you are sending command from one terminal to the other.
    - reset the gazebo, RViz and ROS2
    ```bash
-   pkill -f gazebo
+   pkill -9 -f ros2
    pkill -f rviz
    pkill -f ros2
+   pkill -9 -f gzserver
+   pkill -9 -f gzclient
    ```
-
+   - if you are using Docker container you could also restart your container
+   ```bash
+   docker stop <your container name>
+   docker start <your container name>
+   docker exec -it <your container name> bash
+   ```
 
 
 
