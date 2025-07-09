@@ -15,8 +15,32 @@
    ./docker/run.sh
    ```
    
+3.**Clone this Repository**
+   
+   clone this repo by doing (SSH key)
+   ```bash
+   git clone git@github.com:Albauddin/PROI_Albaqir.git
+   ```
 
-4. **Launch your Gazebo world**
+4. **Launch start.launch.sh**
+
+   To start the simulation in Gazebo and visualization on th RViz
+   build the repo in your workspace
+   ```bash
+   colcon build
+   ```
+
+   make it executable
+   ```bash
+   chmod +x start.launch.sh
+   ```
+
+   run the bash file
+   ```bash
+   ./start.launch.sh
+   ```
+   
+6. **Launch your Gazebo world**
 
    Source every terminal you newly open
    ```bash
@@ -29,7 +53,7 @@
    ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
    ```
 
-5. **Starts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
+7. **Starts the ROS 2 Navigation2 stack in localization mode, using your provided map file**
 
    Adjust yourmap file path
    ```bash
@@ -38,7 +62,7 @@
    
 
    
-6. **launches the navigation system**
+8. **launches the navigation system**
 
    Launches a complete navigation system for TurtleBot3 in simulation, using your specific map and RViz setup
 
@@ -51,7 +75,7 @@
    ![Screenshot from 2025-07-09 03-44-33](https://github.com/user-attachments/assets/a1c00ff5-3ed3-46ed-8d14-569a4b57b661)
 
 
-8. **Start all the filter nodes**
+9. **Start all the filter nodes**
 
    ```bash
    ros2 launch filters filters.launch.py
@@ -67,7 +91,7 @@
    ros2 run my_cool_project initial_pose_publisher
    ```  
 
-9. **Plot the filters**
+10. **Plot the filters**
 
    To Plot the Kalman Filter compared to ground truth
    ```bash
@@ -86,7 +110,7 @@
 
    press `Ctrl + c` to and the plotting and see the result, the result will be saved in `analysis` directory
    
-10. **Demo: send robot to four poses**
+11. **Demo: send robot to four poses**
 
    To create identical comparison between all the Filters, run this script to navigate the robot to 4 poses
    ```bash
