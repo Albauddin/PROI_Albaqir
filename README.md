@@ -113,10 +113,10 @@
    
 10. **Demo: send robot to four poses**
 
-   To create identical comparison between all the Filters, run this script to navigate the robot to 4 poses
-   ```bash
-   ros2 run my_cool_project run_demo
-   ```
+      To create identical comparison between all the Filters, run this script to navigate the robot to 4 poses
+      ```bash
+      ros2 run my_cool_project run_demo
+      ```
 
 
 11. **Expected results**
