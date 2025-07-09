@@ -17,45 +17,28 @@ from launch_ros.actions import Node
 #     ])
 
 def generate_launch_description():
-    # Paths to launch files
     pkg_gazebo = os.path.join(
         get_package_share_directory('turtlebot3_gazebo'), 'launch', 'turtlebot3_world.launch.py')
-    pkg_nav2 = os.path.join(
+    pkg_localization = os.path.join(
         get_package_share_directory('nav2_bringup'), 'launch', 'localization_launch.py')
     pkg_nav2_tb3 = os.path.join(
         get_package_share_directory('turtlebot3_navigation2'), 'launch', 'navigation2.launch.py')
-
-    # Paths to your config files
     map_path = '/workspace/data/src/my_cool_project/maps/my_map.yaml'
     rviz_path = '/workspace/data/config/tb3_navigation2.rviz'
 
-    # Just for debugging
-    print(f"Gazebo launch: '{pkg_gazebo}'")
-    print(f"Nav2 localization launch: '{pkg_nav2}'")
-    print(f"Nav2 navigation2 launch: '{pkg_nav2_tb3}'")
-    print(f"Map path: '{map_path}'")
-    print(f"RViz config path: '{rviz_path}'")
-
     return LaunchDescription([
-        # Step 1: Launch Gazebo
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(pkg_gazebo)
         ),
-
-        # Step 2: Wait 8 seconds, then launch nav2 localization
         TimerAction(
             period=8.0,
             actions=[
                 IncludeLaunchDescription(
-                    PythonLaunchDescriptionSource(pkg_nav2),
-                    launch_arguments={
-                        'map': map_path
-                    }.items()
+                    PythonLaunchDescriptionSource(pkg_localization),
+                    launch_arguments={'map': map_path}.items()
                 )
             ]
         ),
-
-        # Step 3: Wait 16 seconds, then launch navigation2 (with RViz)
         TimerAction(
             period=16.0,
             actions=[
@@ -70,6 +53,7 @@ def generate_launch_description():
             ]
         ),
     ])
+
 
 # def generate_launch_description():
 #     # Get paths for your other launch files
@@ -162,6 +146,6 @@ def generate_launch_description():
         #     ]
         # )
 
-    return LaunchDescription([
-        OpaqueFunction(function=launch_sequence)
-    ])
+    # return LaunchDescription([
+    #     OpaqueFunction(function=launch_sequence)
+    # ])

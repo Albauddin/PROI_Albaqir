@@ -7,11 +7,9 @@ Panels:
         - /Global Options1
         - /TF1/Frames1
         - /TF1/Tree1
-        - /Odometry1/Shape1
-        - /Odometry1/Covariance1
+        - /Odometry1/Covariance1/Position1
         - /PoseWithCovariance1/Covariance1
         - /PoseWithCovariance1/Covariance1/Position1
-        - /PoseWithCovariance2/Covariance1
         - /PoseWithCovariance2/Covariance1/Position1
       Splitter Ratio: 0.5833333134651184
     Tree Height: 287
@@ -461,7 +459,7 @@ Visualization Manager:
           Use Fixed Frame: true
           Use rainbow: true
           Value: true
-      Enabled: true
+      Enabled: false
       Name: Controller
     - Class: rviz_common/Group
       Displays:
@@ -543,8 +541,8 @@ Visualization Manager:
           Color: 204; 51; 204
           Scale: 1
           Value: true
-        Value: true
-      Enabled: false
+        Value: false
+      Enabled: true
       Keep: 1
       Name: Odometry
       Position Tolerance: 0.10000000149011612
@@ -565,7 +563,7 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /odom
-      Value: false
+      Value: true
     - Alpha: 1
       Axes Length: 1
       Axes Radius: 0.10000000149011612
@@ -583,10 +581,10 @@ Visualization Manager:
         Position:
           Alpha: 0.30000001192092896
           Color: 204; 51; 204
-          Scale: 0.5
+          Scale: 0.4000000059604645
           Value: true
         Value: true
-      Enabled: false
+      Enabled: true
       Head Length: 0.30000001192092896
       Head Radius: 0.10000000149011612
       Name: PoseWithCovariance
@@ -600,7 +598,7 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /kf_pose
-      Value: false
+      Value: true
     - Alpha: 1
       Axes Length: 1
       Axes Radius: 0.10000000149011612
@@ -618,10 +616,10 @@ Visualization Manager:
         Position:
           Alpha: 0.30000001192092896
           Color: 204; 51; 204
-          Scale: 0.6000000238418579
+          Scale: 0.550000011920929
           Value: true
         Value: true
-      Enabled: false
+      Enabled: true
       Head Length: 0.30000001192092896
       Head Radius: 0.10000000149011612
       Name: PoseWithCovariance
@@ -635,14 +633,14 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /ekf_pose
-      Value: false
+      Value: true
     - Alpha: 1
-      Arrow Length: 0.05000000074505806
+      Arrow Length: 0.07999999821186066
       Axes Length: 0.30000001192092896
       Axes Radius: 0.009999999776482582
       Class: rviz_default_plugins/PoseArray
       Color: 255; 25; 0
-      Enabled: false
+      Enabled: true
       Head Length: 0.07000000029802322
       Head Radius: 0.029999999329447746
       Name: PoseArray
@@ -656,12 +654,12 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /particle_filter
-      Value: false
+      Value: true
     - Alpha: 1
       Buffer Length: 1
       Class: rviz_default_plugins/Path
       Color: 25; 255; 0
-      Enabled: false
+      Enabled: true
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
       Length: 0.30000001192092896
@@ -684,7 +682,7 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /pf_path
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -732,11 +730,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 83.74647521972656
+      Scale: 128.00885009765625
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz_default_plugins)
-      X: 0.24134883284568787
-      Y: 0.07440631091594696
+      X: -1.8404390811920166
+      Y: -0.3815299868583679
     Saved: ~
 Window Geometry:
   Displays:
@@ -760,5 +758,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1610
-  X: 2630
-  Y: 143
+  X: 2744
+  Y: 246
