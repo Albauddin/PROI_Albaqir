@@ -47,9 +47,8 @@
    ```
 
    depends on your needs you can turn on vosualization of the filter and the ground truth "/odom"
+   
    ![Screenshot from 2025-07-09 03-44-33](https://github.com/user-attachments/assets/a1c00ff5-3ed3-46ed-8d14-569a4b57b661)
-
-   ![image](https://github.com/user-attachments/assets/5f4ecd00-36e4-4c94-9d66-f3174686fffa)
 
 
 8. **Start all the filter nodes**
